@@ -23,7 +23,29 @@ public abstract class Vehicle {
         this.make = make;
         this.type = type;
         this.numPassengers = numPassengers;
+        this.numWheels = numWheels;
+        System.out.println("this vehicle is drivable");
     }
+
+    public Vehicle(float speed,  String type, int numPassengers,String make, int numWings) {
+        this.speed = speed;
+        this.make = make;
+        this.numPassengers = numPassengers; 
+        this.type = type;
+        this.numWings= numWings;
+        System.out.println("this constructor is for a vehicle that  is flyable");
+    }
+    
+    public Vehicle(float speed, int numPassengers, String make, int numSails, String type){
+        this.speed=speed;
+        this.make=make;
+        this.numPassengers=numPassengers;
+        this.numSails=numSails;
+        this.type=type;
+        System.out.println("this vehicle is sailable");
+    }
+    
+    
     
     
     
