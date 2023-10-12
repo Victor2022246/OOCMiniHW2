@@ -10,21 +10,35 @@ import ioutils.IOUtils;
  *
  * @author victor pc
  */
-public class Car extends Vehicle implements Drivable {
-
-    public Car(float speed, String make, String type, int numPassengers, int numWheels) {
-        super(speed, make, type, numPassengers, numWheels);
+public class Airplane extends Vehicle implements Flyable {
+    IOUtils myKb= new IOUtils();
+    private float altitude;
+    public Airplane(float speed, String type, int numPassengers, String make, int numWings) {
+        super(speed, type, numPassengers, make, numWings);
+        this.altitude=0;
     }
     
-    IOUtils myKb = new IOUtils();
+    public Airplane(){
+    this.altitude=50;
+    this.numWings= 2;
+    this.speed= 150;
+    this.type= "Airbus";
     
-    
-    
-    
+    }
+
+    @Override
+    public void changeAltitude(float change) {
+       this.altitude=600; 
+    }
+
+    @Override
+    public float getAltitude() {
+       return altitude;
+    }
 
     @Override
     public void accelerate(float speed) {
-      int speedNow= myKb.getUserInt("please type the speed of the car");
+         int speedNow= myKb.getUserInt("please type the speed of the car");
       if(speedNow<30){
       this.speed=60;
       }
@@ -32,7 +46,7 @@ public class Car extends Vehicle implements Drivable {
 
     @Override
     public void brake() {
-       int speedNow= myKb.getUserInt("please type the speed of the car");
+        int speedNow= myKb.getUserInt("please type the speed of the car");
       if(speedNow>80){
       this.speed=60;
       }
@@ -40,7 +54,7 @@ public class Car extends Vehicle implements Drivable {
 
     @Override
     public void turn(float angle) {
-       String turnDir= myKb.getUserText("Please say the direction left or right");
+           String turnDir= myKb.getUserText("Please say the direction left or right");
        switch (turnDir){
            case "left":
                this.direction=2;
@@ -49,27 +63,29 @@ public class Car extends Vehicle implements Drivable {
            case "right":
                this.direction=1;
             break;
+            
        }
+       
     }
 
     @Override
     public float getDirection() {
-        return direction;
+     return direction;
     }
 
     @Override
     public float getSpeed() {
-        return speed;
+     return speed;
     }
-   // IM obligated to have all of the methods of drivable but have my make propertie private, having a conflit so i changed for protected
+
     @Override
     public String getMake() {
-      return make;  
+        return make;
     }
 
     @Override
     public String getType() {
-       
-        return type;
+       return type;
     }
+    
 }

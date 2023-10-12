@@ -45,6 +45,8 @@ public abstract class Vehicle {
         System.out.println("this vehicle is sailable");
     }
     
+    public Vehicle(){}
+    
     
     
     
