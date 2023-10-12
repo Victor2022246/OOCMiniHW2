@@ -9,10 +9,10 @@ package oocminihw2;
  * @author sweis
  */
 public abstract class Vehicle {
-    private float speed;
-    private float direction = 0;
-    private String make;
-    private String type;
+    protected float speed;
+    protected float direction = 0;
+    protected String make;
+    protected String type;
     protected int numWheels = 0;
     protected int numWings = 0;
     protected int numSails = 0;
