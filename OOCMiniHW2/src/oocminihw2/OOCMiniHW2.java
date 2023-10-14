@@ -25,6 +25,8 @@ public class OOCMiniHW2 {
          System.out.println(plane1.type);
          System.out.println(plane1.numWings);
          System.out.println(plane.getClass());
+         plane.accelerate(30);
+         System.out.println(plane.getSpeed());
          
          
          Boat Boat1= new Boat(50,10,"Caterpillar",4, "Scunna");
