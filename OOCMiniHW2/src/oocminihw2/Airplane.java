@@ -39,16 +39,16 @@ public class Airplane extends Vehicle implements Flyable {
     @Override
     public void accelerate(float speed) {
          int speedNow= myKb.getUserInt("please type the speed of the car");
-      if(speedNow<30){
-      this.speed=60;
+      if(speedNow<100){
+      this.speed=600;
       }
     }
 
     @Override
     public void brake() {
         int speedNow= myKb.getUserInt("please type the speed of the car");
-      if(speedNow>80){
-      this.speed=60;
+      if(speedNow>250){
+      this.speed=100;
       }
     }
 
